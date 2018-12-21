@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "The ultimate guide to scaffolding a website project using Webpack 4 and Expressjs",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/webberig/webpack-express-ultimate-guide.git"
@@ -26,6 +23,7 @@
     "cogear": "^1.3.3"
   },
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "cogear",
     "build": "cogear build"
   }
