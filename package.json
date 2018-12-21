@@ -25,6 +25,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "cogear",
-    "build": "cogear build"
+    "build": "node node_modules/cogear/bin/cogear.js build"
   }
 }
