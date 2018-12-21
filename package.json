@@ -1,0 +1,25 @@
+{
+  "name": "webpack-express-ultimate-guide",
+  "version": "1.0.0",
+  "description": "The ultimate guide to scaffolding a website project using Webpack 4 and Expressjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webberig/webpack-express-ultimate-guide.git"
+  },
+  "keywords": [
+    "Webpack",
+    "Express",
+    "ebook",
+    "hmr"
+  ],
+  "author": "Mathieu Maes <mathieu@webberig.be>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/webberig/webpack-express-ultimate-guide/issues"
+  },
+  "homepage": "https://github.com/webberig/webpack-express-ultimate-guide#readme"
+}
