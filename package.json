@@ -21,5 +21,12 @@
   "bugs": {
     "url": "https://github.com/webberig/webpack-express-ultimate-guide/issues"
   },
-  "homepage": "https://github.com/webberig/webpack-express-ultimate-guide#readme"
+  "homepage": "https://github.com/webberig/webpack-express-ultimate-guide#readme",
+  "devDependencies": {
+    "cogear": "^1.3.3"
+  },
+  "scripts": {
+    "start": "cogear",
+    "build": "cogear build"
+  }
 }
