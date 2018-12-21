@@ -13,11 +13,12 @@ cache:
     - node_modules
 
 install:
-  - npm install -g yarn cogear
+  - npm install -g yarn
+  - ln -s /usr/bin/nodejs /usr/bin/node
   - yarn install
 
 script:
-  - cogear build
+  - yarn build
 deploy:
   provider: pages
   skip_cleanup: true
