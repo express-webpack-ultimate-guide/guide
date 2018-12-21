@@ -1,7 +1,11 @@
 ---
-title: 'Expressjs & Webpack - The ultimate guide'
+title: 'Express & Webpack - The ultimate guide'
 ---
 
-@todo: Introduction
+# Express & Webpack - The ultimate guide
 
-[Continue to preface](/preface)
+A guide to the full potential of webpack inside an Express-driven website. 
+
+
+[Start reading](/preface)
+
