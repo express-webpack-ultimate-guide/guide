@@ -2,7 +2,7 @@ language: node_js
 node_js:
   - "9"
 dist: trusty
-sudo: false
+sudo: true
 
 branches:
   only:
@@ -14,7 +14,7 @@ cache:
 
 install:
   - npm install -g yarn
-  - ln -s /usr/bin/nodejs /usr/bin/node
+  - sudo ln -s /usr/bin/nodejs /usr/bin/node
   - yarn install
 
 script:
