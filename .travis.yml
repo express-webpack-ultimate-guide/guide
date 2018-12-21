@@ -13,7 +13,7 @@ cache:
     - node_modules
 
 install:
-  - npm install -g yarn
+  - npm install -g yarn cogear
   - yarn install
 
 script:
