@@ -12,9 +12,6 @@ webpack bundle!), I finally ended up with the solution in this book.
 The protagonists of the book are **Express** and **Webpack**. The chapters in this book will not just get you through
  the process of scaffolding a website project, it will provide insights to all steps taken.
 
-I created a sample git repository with clean commits and branches for each step taken. Those will be used as a reference
-in this book explaining each of the commits/branches.
-
 ## Goals
 
 The goal is to scaffold an Express project and apply a modern workflow for client-side resources (JS and CSS)
@@ -31,6 +28,15 @@ The goal is to scaffold an Express project and apply a modern workflow for clien
 - Instantly apply CSS changes without reloading the browser
 - Refresh the page upon JS changes
 - Refresh the page upon changes in the Express app
+
+## Sample project
+
+I created a sample git repository with clean commits and branches for each step taken. Those will be used as a reference
+in this book explaining each of the commits/branches.
+
+https://github.com/webberig/webpack-express-ultimate-guide-sample
+
+![Commit log](/sample-commits.png)
 
 ## Table of contents
 
@@ -59,3 +65,5 @@ The goal is to scaffold an Express project and apply a modern workflow for clien
 **Mathieu Maes** is a front-end developer at [Zimmo.be](https://www.zimmo.be/), located in Leuven (Belgium). With over
 15 years of experience in web development, he's built countless of websites and applications. Much too often he's
  responsible for the build stack of projects.
+
+[Continue to chapter 1 - Scaffold a new Express project](/1-scaffold-a-new-express-project)
