@@ -17,7 +17,7 @@ The generator will create a `my-project` folder and put a basic Express app in i
 - `views/` contains a few twig templates. I prefer to use twig, but choosing another template system won't make much difference for this book
 - `bin/www` this may look confusing, but it's actually just a JS file. It's used to start the server.
 
-[Sample commit for this step](https://github.com/webberig/webpack-express-ultimate-guide-sample/commit/c3cf40a5795e820b267efca88f053b9c787108c1)
+Take a look at the [commit for this step](https://github.com/webberig/webpack-express-ultimate-guide-sample/commit/c3cf40a5795e820b267efca88f053b9c787108c1)
 
 ## Moving files
 
@@ -36,9 +36,9 @@ You'll also have to update references to this file:
 - `bin/www`: Reference to the `app.js` (`require('../src/server/app')`)
 - `src/server/app.js`: Reference to the public folder (`path.join(__dirname, '../../public')`)
 
-[Sample commit for this step](https://github.com/webberig/webpack-express-ultimate-guide-sample/commit/db51bfec6e09b3dbbbd491610e0d4db7120c5672)
+Take a look at the [commit for this step](https://github.com/webberig/webpack-express-ultimate-guide-sample/commit/db51bfec6e09b3dbbbd491610e0d4db7120c5672)
 
-## Adding it to git
+## Adding .gitignore
 
 If you want to use git in your project, consider making a `.gitignore` file first. I used the PHPStorm generator but
 the most important rules are:
@@ -48,7 +48,7 @@ the most important rules are:
 /node_modules
 ```
 
-[Sample commit for this step](https://github.com/webberig/webpack-express-ultimate-guide-sample/commit/b18b353501dc208b08dab9e9401304b1dbaa0302)
+Take a look at the [commit for this step](https://github.com/webberig/webpack-express-ultimate-guide-sample/commit/b18b353501dc208b08dab9e9401304b1dbaa0302)
 
 ## Installing dependencies and starting it up
 
@@ -66,4 +66,6 @@ We used the Express generator to create a new Express project and made a few pre
 configuration. You should be able to start the app and see a test page.
 
 After completing this chapter, your app should look like the sample app in the
- [1-express-scaffolding](https://github.com/webberig/webpack-express-ultimate-guide-sample/tree/1-express-scaffolding) branch.
+ [chapter-1](https://github.com/webberig/webpack-express-ultimate-guide-sample/tree/chapter-1) tag.
+
+[Continue to chapter 2 - Setup Webpack for JS build with babel](/2-setup-webpack-build-with-babel)
