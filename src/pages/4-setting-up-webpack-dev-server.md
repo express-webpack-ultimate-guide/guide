@@ -74,6 +74,8 @@ exports.start = () => {
     bundler.listen(3001, "localhost", function () {
         console.log("Bundling project, please wait...");
     });
+    
+    return bundler;
 };
 ```
 

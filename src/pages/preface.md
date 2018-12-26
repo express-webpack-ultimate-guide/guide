@@ -58,15 +58,6 @@ Each of those commits will be explained in detail in each of the corresponding c
 ###### Production
 7. Extract CSS from webpack and manage assets
 
-###### Linting
-8. Add stylelint for CSS linting
-9. Add eslint for ES linting
-
-###### Testing
-10. Setup Mocha/Chai for ExpressJs unit tests
-11. Setup supertest for integration tests
-12. Setup Karma for client-side unit tests
-
 ## About the author
 **Mathieu Maes** is a front-end developer at [Zimmo.be](https://www.zimmo.be/), located in Leuven (Belgium). With over
 15 years of experience in web development, he's built countless of websites and applications. He could setup a good
