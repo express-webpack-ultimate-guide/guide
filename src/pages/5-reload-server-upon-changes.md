@@ -1,4 +1,4 @@
-# Reload server upon changes (the smart way)
+# Chapter V - Reload server upon changes (the smart way)
 
 This chapter is the key to perfection of our Express app setup, at least, if we do it properly.
 

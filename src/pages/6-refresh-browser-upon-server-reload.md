@@ -1,4 +1,4 @@
-# Refresh browser upon server reload
+# Chapter VI - Refresh browser upon server reload
 
 This is the final episode of the "hot relading saga". It's not big change though, since all previous chapters have put
 everything in the right place to get this done quite easily.
