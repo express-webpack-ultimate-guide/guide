@@ -26,5 +26,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "cogear",
     "build": "node node_modules/cogear/bin/cogear.js build"
+  },
+  "dependencies": {
+    "hamburgers": "^1.1.3"
   }
 }

@@ -1,0 +1,8 @@
+main {
+  filter: blur(0);
+  body.__menu-visible & {
+    transition: filter .1s;
+    filter: blur(5px);
+    overflow: hidden;
+  }
+}

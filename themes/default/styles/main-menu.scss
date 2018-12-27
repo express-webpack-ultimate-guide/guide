@@ -1,0 +1,50 @@
+.main-menu {
+  background-color: transparentize(white, 0.5);
+  position: absolute;
+  bottom: 0;
+  top: 62px;
+  width: 100%;
+  z-index: -1;
+  opacity: 0;
+
+  &_wrapper {
+    width: 300px;
+    margin: 50px auto 0;
+    transform: scale(.6);
+  }
+
+  ul {
+    list-style: none;
+    color: $accent-color;
+  }
+  ol {
+    counter-reset: item;
+    li {
+      list-style: none;
+    }
+    li:before {
+      content: counter(item) ". ";
+      counter-increment: item;
+      color: $accent-color;
+
+    }
+  }
+  ol[start="4"] {
+    counter-reset: lis 3;
+  }
+
+  a {
+    color: $accent-color;
+  }
+  body.__menu-visible & {
+    z-index: 1;
+    display: block;
+    opacity: 1;
+    transition: opacity .3s;
+    &_wrapper {
+      transform: scale(1);
+      transition: transform 1s;
+    }
+
+  }
+}

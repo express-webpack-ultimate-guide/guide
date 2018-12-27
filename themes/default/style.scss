@@ -1,0 +1,11 @@
+@import "styles/header.scss";
+@import "styles/main-menu.scss";
+@import "styles/main.scss";
+
+body {
+    margin: 0;
+    padding: 0;
+    &.__menu-visible {
+        overflow: hidden;
+    }
+}

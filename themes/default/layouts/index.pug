@@ -1,11 +1,42 @@
 doctype html
 head
-    title= title
+    title Express|Webpack - The ultimate guide
     link(rel="shortcut icon" href="/favicon.png")
+    link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic")
+    link(rel="stylesheet" href="https://cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css")
     meta(content="width=device-width, height=device-height, initial-scale=1, minimum-scale=1.0, maximum-scale=1" name="viewport")
     block head
 body
-    div.container
-        block content
-            != content
-    block footer
+    header
+        div.brand Express | Webpack
+            small The ultimate guide
+        button.hamburger.hamburger--vortex(type='button')
+            span.hamburger-box
+                span.hamburger-inner
+    nav.main-menu
+        div.main-menu_wrapper
+            h2 Chapters
+            ul
+                li.main-menu_item
+                    a(href="/preface") Preface
+            h3 Getting started
+            ol
+                li.main-menu_item.__active
+                    a(href="/1-scaffold-a-new-express-project") Scaffold a new Express Project
+                li.main-menu_item
+                    a(href="/2-setup-webpack-build-with-babel") Setup Webpack build with Babel
+                li.main-menu_item
+                    a(href="/3-setup-webpack-build-with-babel") Setup Webpack build with Babel
+            h3 Hot reloading
+            ol(start="4")
+                li.main-menu_item.__active
+                    a(href="/4-scaffold-a-new-express-project") Scaffold a new Express Project
+                li.main-menu_item
+                    a(href="/5-setup-webpack-build-with-babel") Setup Webpack build with Babel
+                li.main-menu_item
+                    a(href="/6-setup-webpack-build-with-babel") Setup Webpack build with Babel
+    main
+        div.container
+            block content
+                != content
+        block footer
