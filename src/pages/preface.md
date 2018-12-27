@@ -64,4 +64,9 @@ Each of those commits will be explained in detail in each of the corresponding c
  number of tools or frameworks in his sleep, which is why he's usually responsible for project scaffolding. That 
  doesn't mean he gets actual work done in his sleep, nor he sleeps at work!
 
+Find me on
+ - Twitter: https://twitter.com/webberig
+ - LinkedIn: https://www.linkedin.com/in/webberig
+ - GitHub: https://github.com/webberig
+
 [Continue to chapter 1 - Scaffold a new Express project](/1-scaffold-a-new-express-project)
