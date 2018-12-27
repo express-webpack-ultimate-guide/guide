@@ -1,20 +1,5 @@
 The ultimate guide to integrating Webpack into an Express app. This repository contains an ebook that will help you
-setup an Express app and seamless integration with a Webpack build.
-
-## Goals
-
-###### 1. Build (client-side) JS
-- Client-side Javascript should be transpiled with **Babel**
-- **Webpack** should be configured to make a JS bundle
-
-###### 2. Build CSS
-- Compile **SASS/SCSS**
-- Pass through PostCSS, mainly to apply the **Autoprefixer** plugin
-
-###### 3. Hot module replacement
-- Instantly apply CSS changes without reloading the browser
-- Refresh the page upon JS changes
-- Refresh the page upon changes in the Express app
+setup an Express app and seamless integration with a Webpack build with hot reloading support for both client and server.
 
 ## Chapters
 - [Preface](https://github.com/webberig/webpack-express-ultimate-guide/blob/master/src/pages/preface.md)
@@ -32,4 +17,4 @@ setup an Express app and seamless integration with a Webpack build.
 ###### Production
 - [Chapter 7 - Extract CSS from Webpack manage assets](https://github.com/webberig/webpack-express-ultimate-guide/blob/master/src/pages/7-extract-css-from-webpack-and-manage-assets.md)
 
-- [Closing]((https://github.com/webberig/webpack-express-ultimate-guide/blob/master/src/pages/closing.md))
+- [Closing](https://github.com/webberig/webpack-express-ultimate-guide/blob/master/src/pages/closing.md)
