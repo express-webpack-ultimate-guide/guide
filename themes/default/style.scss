@@ -1,11 +1,21 @@
 @import "styles/header.scss";
 @import "styles/main-menu.scss";
 @import "styles/main.scss";
+@import "styles/palette.scss";
 
 body {
     margin: 0;
     padding: 0;
+    color: $primary-text-color;
     &.__menu-visible {
         overflow: hidden;
+    }
+}
+
+a {
+    color: $primary-color;
+    text-decoration: underline;
+    &:hover, &:focus, &:active {
+        color: $primary-color-dark;
     }
 }

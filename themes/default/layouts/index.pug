@@ -17,24 +17,31 @@ body
         div.main-menu_wrapper
             h2 Chapters
             ul
-                li.main-menu_item
+                li(class=(uri === 'preface/') ? 'main-menu_item __active': 'main-menu_item')
                     a(href="/preface") Preface
             h3 Getting started
             ol
-                li.main-menu_item.__active
-                    a(href="/1-scaffold-a-new-express-project") Scaffold a new Express Project
-                li.main-menu_item
-                    a(href="/2-setup-webpack-build-with-babel") Setup Webpack build with Babel
-                li.main-menu_item
-                    a(href="/3-setup-webpack-build-with-babel") Setup Webpack build with Babel
+                li(class=(uri === '1-scaffold-a-new-express-project/') ? 'main-menu_item __active': 'main-menu_item')
+                    a(href="/1-scaffold-a-new-express-project") 1. Scaffold a new Express Project
+                li(class=(uri === '2-setup-webpack-build-with-babel/') ? 'main-menu_item __active': 'main-menu_item')
+                    a(href="/2-setup-webpack-build-with-babel") 2. Setup Webpack build with Babel
+                li(class=(uri === '3-build-scss-using-webpack/') ? 'main-menu_item __active': 'main-menu_item')
+                    a(href="/3-build-scss-using-webpack") 3. Build SCSS using Webpack
             h3 Hot reloading
-            ol(start="4")
-                li.main-menu_item.__active
-                    a(href="/4-scaffold-a-new-express-project") Scaffold a new Express Project
-                li.main-menu_item
-                    a(href="/5-setup-webpack-build-with-babel") Setup Webpack build with Babel
-                li.main-menu_item
-                    a(href="/6-setup-webpack-build-with-babel") Setup Webpack build with Babel
+            ol
+                li(class=(uri==='4-setting-up-webpack-dev-server/')?'main-menu_item __active':'main-menu_item')
+                    a(href="/4-setting-up-webpack-dev-server") 4. Setting up webpack-dev-server
+                li(class=(uri === '5-reload-server-upon-changes/') ? 'main-menu_item __active': 'main-menu_item')
+                    a(href="/5-reload-server-upon-changes") 5. Reload server upon changes
+                li(class=(uri === '6-refresh-browser-upon-server-reload/') ? 'main-menu_item __active': 'main-menu_item')
+                    a(href="/6-refresh-browser-upon-server-reload") 6. Refresh browser upon server reload
+            h3 Production
+            ol
+                li(class=(uri === '7-extract-css-from-webpack-and-manage-assets/') ? 'main-menu_item __active': 'main-menu_item')
+                    a(href="/7-extract-css-from-webpack-and-manage-assets") 7. Setting up webpack-dev-server
+            ol
+                li(class=(uri === 'closing/') ? 'main-menu_item __active': 'main-menu_item')
+                    a(href="/closing") Closing words
     main
         div.container
             block content
