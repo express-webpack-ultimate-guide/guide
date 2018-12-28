@@ -2,7 +2,7 @@ doctype html
 head
     title Express|Webpack - The ultimate guide
     link(rel="shortcut icon" href="/favicon.png")
-    link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic")
+    link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Crimson+Text|Roboto")
     link(rel="stylesheet" href="https://cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css")
     meta(content="width=device-width, height=device-height, initial-scale=1, minimum-scale=1.0, maximum-scale=1" name="viewport")
     block head
@@ -17,7 +17,7 @@ body
         div.main-menu_wrapper
             h2 Chapters
             ul
-                li(class=(uri === 'preface/') ? 'main-menu_item __active': 'main-menu_item')
+                li(class=(uri.indexOf('preface') >= 0) ? 'main-menu_item __active': 'main-menu_item')
                     a(href="/preface") Preface
             h3 Getting started
             ol
