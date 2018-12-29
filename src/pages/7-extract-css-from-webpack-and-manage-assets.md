@@ -30,18 +30,22 @@ need to bring to your page! Luckily, there's a quite easy solution for that. Web
 a JSON file containing all assets it created for each entry. All we need to do is incorporate that manifest into the
 Express app so it generates all necessary assets.
 
-## Get started
-### Addding packages
+### Installing packages
 
-    yarn add -D assets-webpack-plugin express-webpack-assets mini-css-extract-plugin optimize-css-assets-webpack-plugin uglifyjs-webpack-plugin 
+```
+yarn add -D assets-webpack-plugin mini-css-extract-plugin optimize-css-assets-webpack-plugin uglifyjs-webpack-plugin
+yarn add express-webpack-assets
+```
 
-`assets-webpack-plugin` creates the manifest in JSON format
-`express-webpack-assets` reads the manifest and exposes a utility you can use in the templates
-`mini-css-extract-plugin` extracts styles to separate CSS files in your bundle
-`optimize-css-assets-webpack-plugin` minimizes the CSS (using cssnano)
-`uglifyjs-webpack-plugin` minimizes JS
+- `assets-webpack-plugin` creates the manifest in JSON format
+- `express-webpack-assets` reads the manifest and exposes a utility you can use in the templates
+- `mini-css-extract-plugin` extracts styles to separate CSS files in your bundle
+- `optimize-css-assets-webpack-plugin` minimizes the CSS (using cssnano)
+- `uglifyjs-webpack-plugin` minimizes JS
 
-### Configure manifest
+[commit for this step](https://github.com/webberig/webpack-express-ultimate-sample/commit/e7498b7313058bff8658c4b744ce11adc2c34ad4)
+
+### Configure manifest in Webpack
 
 Add the `assets-webpack-plugin` to your `webpack.config.js`
 
@@ -50,14 +54,14 @@ const AssetsWebpackPlugin = require('assets-webpack-plugin');
 
 module.exports = {
     plugins: [
-        new AssetsWebpackPlugin({path: path.join(__dirname, 'dist')}),
+        new AssetsWebpackPlugin({path: config.distFolder}),
     ]
 }
 ```
 
 This plugin will now generate a `/dist/webpack-assets.json` file during each build.
 
-Take a look at the [commit for this step](https://github.com/webberig/webpack-express-ultimate-sample/commit/b47ed89318efaa40e447c612bccd0b46695d15a8)
+[commit for this step](https://github.com/webberig/webpack-express-ultimate-sample/commit/1025a8bb13ec52327349319f13841aa418f6b8fe)
 
 ### Implement assets in Express app
 
@@ -65,7 +69,7 @@ Now that we have a manifest, we can use that in our Express app. The `express-we
 middleware that will take care of that. Let's add it to our `/src/server/app.js`:
 
 ```javascript
-var webpackAssets = require('express-webpack-assets');
+const webpackAssets = require('express-webpack-assets');
 
 // ... 
 
@@ -83,7 +87,7 @@ The middleware will expose a function `webpack_asset` to our template engine, so
 The Javascript will now be loaded no matter how webpack is naming our files, as long as we keep the name of the entry
 "main".
 
-Take a look at the [commit for this step](https://github.com/webberig/webpack-express-ultimate-sample/commit/1fcd85a82326c71636e2c498f0987cfad2f14399)
+[commit for this step](https://github.com/webberig/webpack-express-ultimate-sample/commit/1b6bf255a0188c862bd47946eb2d5286c8710d66)
 
 ### Extract CSS during production build
 
@@ -110,7 +114,7 @@ Next, we replace the `style-loader` during production builds:
             {
                 test: /\.(sa|sc|c)ss$/,
                 use: [
-                    devMode ? 'style-loader' : { loader: MiniCssExtractPlugin.loader },
+                    config.isProd ? { loader: MiniCssExtractPlugin.loader } : 'style-loader',
                     'css-loader',
                     'postcss-loader',
                     'sass-loader'
@@ -122,11 +126,11 @@ Next, we replace the `style-loader` during production builds:
 
 You can now test the build by running following command:
 
-    NODE_ENV=production webpack --prod
+    yarn build
     
 A wild `dist/main.css` appeared!
 
-Take a look at the [commit for this step](https://github.com/webberig/webpack-express-ultimate-sample/commit/1fcd85a82326c71636e2c498f0987cfad2f14399)
+[commit for this step](https://github.com/webberig/webpack-express-ultimate-sample/commit/2a5e1b7867db66c4af90a64814245842eae27d57)
 
 ### Add optimization
 
@@ -166,7 +170,7 @@ We now have a complete setup for both development and production. To summarize, 
 
 `yarn start` Start Express app and wds, watch for changes and refresh your browser to apply them.
 
-`yarn build:prod` Create your frontend bundle. Files are saved to the `dist/` folder.
+`yarn build` Create your frontend bundle. Files are saved to the `dist/` folder.
 
 `yarn start:prod` Run Express in production-mode, just serving the files from the `dist/` folder. Webpack is not
  running.
