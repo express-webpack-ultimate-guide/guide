@@ -123,12 +123,19 @@ Next, we replace the `style-loader` during production builds:
         ]
     },
 ```
-
 You can now test the build by running following command:
 
     yarn build
     
 A wild `dist/main.css` appeared!
+
+Finally we can add the CSS file to our `layout.twig`:
+```twig
+    {% if webpack_asset('main').css is defined %}
+    <link rel="stylesheet" href="{{ webpack_asset('main').css  }}" />
+    {% endif %}
+```
+We add this conditionally because the CSS asset will not be present during development!
 
 [commit for this step](https://github.com/webberig/webpack-express-ultimate-sample/commit/2a5e1b7867db66c4af90a64814245842eae27d57)
 
@@ -153,18 +160,33 @@ module.exports = {
 Even though Webpack 4 has UglifyJs built-in and enabled by default, we need to add it anyway because we're overriding
  the `optimization.minimizer` default configuration.
 
-### Add npm scripts
+[commit for this step](https://github.com/webberig/webpack-express-ultimate-sample/commit/697db3d6c473dde6be221794360e660533d58f7e)
 
-Add new scripts in your `package.json`:
+### Add hashes to asset filenames
+
+As a final step we can configure webpack to use hashes in the output filenames:
+
+```javascript
+module.exports = {
+    output: {
+        path: config.distFolder,
+        filename: '[name].[hash].js',
+        publicPath: config.publicPath
+    },
+    plugins: [
+        new AssetsWebpackPlugin({path: config.distFolder}),
+        new MiniCssExtractPlugin({
+            filename: '[name].[contenthash].css',
+        }),
+    ],
+}
 ```
-  "scripts": {
-    "start": "node ./bin/dev.js",
-    "start:prod": "NODE_ENV=production node ./bin/www",
-    "build:prod": "NODE_ENV=production webpack --prod"
-  },
-```
+
+Since we already implemented the manifest, we don't need to do anything in our Express app.
 
 ## Conclusion
+
+[commit for this step](https://github.com/webberig/webpack-express-ultimate-sample/commit/954c36d2a86382ba514983db3d17d290239761b7)
 
 We now have a complete setup for both development and production. To summarize, these commands are now available to you:
 
