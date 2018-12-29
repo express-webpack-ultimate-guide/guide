@@ -18,7 +18,7 @@ This tool will add vendor prefixes required to support older browsers.
 The sample project uses SCSS, but you can pretty much do the same with any other preprocessor if you replace the 
 `sass-loader` with the appropriate loader.
 
-## Configure webpack
+## Add dependencies
 
 To have your SCSS properly processed in Webpack, you'll need 4 different loaders. This is because Webpack recommends
 a single responsibility principle for a loader, and there are actually 4 steps involved this time:
@@ -29,8 +29,6 @@ a single responsibility principle for a loader, and there are actually 4 steps i
 - `style-loader` compiles the CSS to JS and makes sure the CSS is applied during runtime or
  [on-demand](https://github.com/webpack-contrib/style-loader#useable)
 
-### Add dependencies
-
 Install the loaders in your project:
 ```
 yarn add -D sass-loader node-sass css-loader postcss-loader postcss-preset-env style-loader
@@ -39,7 +37,9 @@ yarn add -D sass-loader node-sass css-loader postcss-loader postcss-preset-env s
 You will notice I also added `postcss-preset-env` and `node-sass`. This is because `sass-loader` requires you to add
 `node-sass` as a dependency yourself, and `postcss-preset-env` helps us configuring postcss more easily.
 
-### Webpack configuration
+[commit for this step](https://github.com/webberig/webpack-express-ultimate-guide-sample/commit/60dc52f7bfe0f3f1b4b039ad88f6946c8dd46817)
+
+### Configure webpack
 
 Just add a new rule to your `webpack.config.js` to use those loaders.
 
@@ -70,16 +70,33 @@ Then, I added it as a dependency in our entry file:
 // /src/client/main.js
 require("./main.scss");
 ```
+Don't forget to remove the old `stylesheets/style.css` reference in `/src/server/views/layout.twig`.
 
-And that's it! Run `webpack`, start the server (`yarn start`) and point your browser again to http://localhost:3000
+Finally, create a config file required by postCSS at `/src/client/postcss.config.js`:
+```javascript
+module.exports = () => {
+    return {
+        map: false,
+        plugins: {
+            "postcss-preset-env": {
+                autoprefixer: {
+                    grid: true
+                }
+            },
+        }
+    }
+};
+```
 
-Take a look at the [commit for these steps](https://github.com/webberig/webpack-express-ultimate-guide-sample/commit/efdd77e79ea8ef633734992401a12c21a53406e3)
+[commit for these steps](https://github.com/webberig/webpack-express-ultimate-guide-sample/commit/16fd2e18f61713bb3ee6f57b743b1d8f0dc1a405)
 
 ## Conclusion
 
+And that's it! Run `webpack`, start the server (`yarn start`) and point your browser again to http://localhost:3000
+
 You webpack bundle now includes the styles of the project. You should be aware that this setup is not production-ready,
-because having your CSS inside the JS is not recommended. In chapter 7 we'll come back to the CSS to
-extract it from the bundle during production build.
+because having your CSS inside the JS is not recommended. In chapter 7 we'll come back to the CSS and extract it from
+the bundle during production build.
 
 After completing this chapter, your app should look like the sample app in the
  [chapter-3](https://github.com/webberig/webpack-express-ultimate-guide-sample/tree/chapter-3) tag.
