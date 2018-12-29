@@ -61,7 +61,7 @@ We must adapt our startup script to work with this change, so in your `/bin/www`
 ```
 (Notice the trailing brackets)
 
-Take a look at the [commit for this step](https://github.com/webberig/webpack-express-ultimate-guide-sample/commit/5e6cfa327e89eeccecf296f71662b01c66366049)
+Take a look at the [commit for this step](https://github.com/webberig/webpack-express-ultimate-sample/commit/5e6cfa327e89eeccecf296f71662b01c66366049)
 
 ## Create a dev startup script
 
@@ -186,7 +186,7 @@ chokidar.watch(path.join(__dirname, "../src/server")).on('all', (event, at) => {
 The `chokidar` module takes care of watching the files for changes. When the change event is fired, it runs the 
 `restart` chain.
 
-Take a look at the [commit for this step](https://github.com/webberig/webpack-express-ultimate-guide-sample/commit/4090b56991aef00f397fd8d01c3b4420b437aac3)
+Take a look at the [commit for this step](https://github.com/webberig/webpack-express-ultimate-sample/commit/4090b56991aef00f397fd8d01c3b4420b437aac3)
 
 ## Create a npm script
 
@@ -197,7 +197,7 @@ to the `scripts` property in your `package.json`:
     "dev": "node ./bin/dev.js"
 ``` 
 
-Take a look at the [commit for this step](https://github.com/webberig/webpack-express-ultimate-guide-sample/commit/e1dda8a8ec73e8b79d54d502876647d1b56249c2)
+Take a look at the [commit for this step](https://github.com/webberig/webpack-express-ultimate-sample/commit/e1dda8a8ec73e8b79d54d502876647d1b56249c2)
 
 ## Conclusion
 
@@ -206,6 +206,6 @@ to the server (routes, views, ...) it should automatically reload the server. Ho
 browser manually. We'll put the icing on the cake in the next chapter!
 
 After completing this chapter, your app should look like the sample app in the
- [chapter-5](https://github.com/webberig/webpack-express-ultimate-guide-sample/tree/chapter-5) tag.
+ [chapter-5](https://github.com/webberig/webpack-express-ultimate-sample/tree/chapter-5) tag.
 
 [Continue to chapter 6 - Refresh browser upon server reload](/6-refresh-browser-upon-server-reload)

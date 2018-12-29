@@ -37,7 +37,7 @@ yarn add -D sass-loader node-sass css-loader postcss-loader postcss-preset-env s
 You will notice I also added `postcss-preset-env` and `node-sass`. This is because `sass-loader` requires you to add
 `node-sass` as a dependency yourself, and `postcss-preset-env` helps us configuring postcss more easily.
 
-[commit for this step](https://github.com/webberig/webpack-express-ultimate-guide-sample/commit/593588627dbc11ed67c369e854987162d283b09c)
+[commit for this step](https://github.com/webberig/webpack-express-ultimate-sample/commit/593588627dbc11ed67c369e854987162d283b09c)
 
 ### Configure webpack
 
@@ -60,7 +60,7 @@ Just add a new rule to your `webpack.config.js` to use those loaders.
     }
 ```
 
-[commit for this step](https://github.com/webberig/webpack-express-ultimate-guide-sample/commit/9f08f8262a5f37bf09416f67ce74b58cf2f8c9b8)
+[commit for this step](https://github.com/webberig/webpack-express-ultimate-sample/commit/9f08f8262a5f37bf09416f67ce74b58cf2f8c9b8)
 
 ### Create your first SCSS file
 
@@ -90,7 +90,7 @@ module.exports = () => {
 };
 ```
 
-[commit for these steps](https://github.com/webberig/webpack-express-ultimate-guide-sample/commit/1a6c2763de9c70d31d91c62db67b3d908663a4fc)
+[commit for these steps](https://github.com/webberig/webpack-express-ultimate-sample/commit/1a6c2763de9c70d31d91c62db67b3d908663a4fc)
 
 ## Conclusion
 
@@ -101,6 +101,6 @@ because having your CSS inside the JS is not recommended. In chapter 7 we'll com
 the bundle during production build.
 
 After completing this chapter, your app should look like the sample app in the
- [chapter-3](https://github.com/webberig/webpack-express-ultimate-guide-sample/tree/chapter-3) tag.
+ [chapter-3](https://github.com/webberig/webpack-express-ultimate-sample/tree/chapter-3) tag.
 
 [Continue to chapter 4 - Setting up webpack-dev-server](/4-setting-up-webpack-dev-server)

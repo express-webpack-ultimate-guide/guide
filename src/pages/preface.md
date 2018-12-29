@@ -21,40 +21,23 @@ Keep in mind though that this book assumes some basic understanding of both prot
 This is what defines the holy grail (at least, for me personally):
 
 1. Build (client-side) JS
-    - Client-side Javascript should be transpiled with **Babel**
-    - **Webpack** should be configured to make a JS bundle
+- Client-side Javascript should be transpiled with **Babel**
+- **Webpack** should be configured to make a JS bundle
 2. Build CSS
-    - Compile **SASS/SCSS**
-    - Pass through PostCSS, mainly to apply the **Autoprefixer** plugin
+- Compile **SASS/SCSS**
+- Pass through PostCSS, mainly to apply the **Autoprefixer** plugin
 3. Hot module replacement
-    - Instantly apply CSS changes without reloading the browser
-    - Refresh the page upon JS changes
-    - Refresh the page upon changes in the Express app
+- Instantly apply CSS changes without reloading the browser
+- Refresh the page upon JS changes
+- Refresh the page upon changes in the Express app
 
 ## Sample project
 
 This book will often refer to a sample project on Github with clean commits and tags for each chapter.
 
-https://github.com/webberig/webpack-express-ultimate-guide-sample
-
-<img src="/sample-commits.png" alt="Sample git commit log" width="648" />
+https://github.com/webberig/webpack-express-ultimate-sample
 
 Each of those commits will be explained in detail in each of the corresponding chapter.
-
-## Table of contents
-
-#### Getting started
-1. [Scaffold a new Express project](/1-scaffold-a-new-express-project)
-2. [Setup Webpack for JS build with babel](/2-setup-webpack-build-with-babel)
-3. [Build SCSS using Webpack](/3-build-scss-using-webpack)
-
-#### Hot reloading
-4. [Webpack-dev-server with proxy](/4-setting-up-webpack-dev-server)
-5. [Reload server upon changes (the smart way)](/5-reload-server-upon-changes)
-6. [Refresh browser upon server reload](/6-refresh-browser-upon-server-reload)
-
-#### Production
-7. [Extract CSS from webpack and manage assets](/7-extract-css-from-webpack-and-manage-assets)
 
 ## About the author
 **Mathieu Maes** is a front-end developer at [Zimmo.be](https://www.zimmo.be/), located in Leuven (Belgium). With over

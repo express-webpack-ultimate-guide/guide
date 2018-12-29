@@ -18,7 +18,7 @@ interface. This doesn't do much as long as we don't have a configuration, so let
 
 The Babel packages are explained below.
 
-[commit for this step](https://github.com/webberig/webpack-express-ultimate-guide-sample/commit/686629553ab30fc3d618507a8ea97dcd82d05910)
+[commit for this step](https://github.com/webberig/webpack-express-ultimate-sample/commit/686629553ab30fc3d618507a8ea97dcd82d05910)
 
 ### Configuring Webpack
 
@@ -89,7 +89,7 @@ After running the build, you should see that `/dist/main.bundle.js` has appeared
 
 ![Webpack run](/chapter-2/webpack-first-run.png)
 
-[commit for this step](https://github.com/webberig/webpack-express-ultimate-guide-sample/commit/4c84fce01fae98998eb0aa3a430f367634364048)
+[commit for this step](https://github.com/webberig/webpack-express-ultimate-sample/commit/4c84fce01fae98998eb0aa3a430f367634364048)
 
 ### Adding the bundle to your HTML
 
@@ -119,7 +119,7 @@ console in your browser. You should see the loving message appearing from our bu
 
 ![Browser with console output from bundle](/chapter-2/browser-with-bundle.png)
 
-[commit for this step](https://github.com/webberig/webpack-express-ultimate-guide-sample/commit/6ac5e7b217bae8677555c9033ccaa5383b68c375)
+[commit for this step](https://github.com/webberig/webpack-express-ultimate-sample/commit/6ac5e7b217bae8677555c9033ccaa5383b68c375)
 
 ### Adding Babel
 
@@ -164,7 +164,7 @@ matching files.
 
 You can test the setup by adding some ES6/7/2015 syntax in your `/src/client/main.js` and run webpack.
 
-[commit for this step](https://github.com/webberig/webpack-express-ultimate-guide-sample/commit/24892c48874ceb6b3af79f17b29c03589e3927fc)
+[commit for this step](https://github.com/webberig/webpack-express-ultimate-sample/commit/24892c48874ceb6b3af79f17b29c03589e3927fc)
 
 ## Tip & Tricks
 
@@ -182,7 +182,7 @@ however is to add more automation to webpack and integrate it deeper in your app
 upon start, trigger re-build automatically upon changes and signal the browser so it reloads. 
 
 After completing this chapter, your app should look like the sample app in the
- [chapter-2](https://github.com/webberig/webpack-express-ultimate-guide-sample/tree/chapter-2) tag.
+ [chapter-2](https://github.com/webberig/webpack-express-ultimate-sample/tree/chapter-2) tag.
 
 [Continue to chapter 3 - Build SCSS using Webpack](/3-build-scss-using-webpack)
 

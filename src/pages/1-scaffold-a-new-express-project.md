@@ -22,7 +22,7 @@ The generator will create a `my-project` folder and put a basic Express app in i
 - `views/` contains a few twig templates. I prefer to use twig, but choosing another template system won't make much difference for this book
 - `bin/www` this may look confusing, but it's actually just a JS file. It's used to start the server.
 
-Take a look at the [commit for this step](https://github.com/webberig/webpack-express-ultimate-guide-sample/commit/9268371229c671d773e675ba5372edfaf6df6074)
+Take a look at the [commit for this step](https://github.com/webberig/webpack-express-ultimate-sample/commit/9268371229c671d773e675ba5372edfaf6df6074)
 
 ### Housekeeping
 
@@ -41,7 +41,7 @@ You'll also have to update references to this file:
 - `bin/www`: Reference to the `app.js` (`require('../src/server/app')`)
 - `src/server/app.js`: Reference to the public folder (`path.join(__dirname, '../../public')`)
 
-[commit for this step](https://github.com/webberig/webpack-express-ultimate-guide-sample/commit/85714693f0b293d7b1c4b521c65d69f7e84cf3a1)
+[commit for this step](https://github.com/webberig/webpack-express-ultimate-sample/commit/85714693f0b293d7b1c4b521c65d69f7e84cf3a1)
 
 ### Adding .gitignore
 
@@ -53,7 +53,7 @@ the most important rules are:
 /node_modules
 ```
 
-[commit for this step](https://github.com/webberig/webpack-express-ultimate-guide-sample/commit/31a14e20d90f1817d35fbc2b70238bf400a592c8)
+[commit for this step](https://github.com/webberig/webpack-express-ultimate-sample/commit/31a14e20d90f1817d35fbc2b70238bf400a592c8)
 
 ## Conclusion
 
@@ -68,7 +68,7 @@ yarn start
 Point your browser to (http://localhost:3000) and see the app in action!
 
 After completing this chapter, your app should look like the sample app in the
- [chapter-1](https://github.com/webberig/webpack-express-ultimate-guide-sample/tree/chapter-1) tag.
+ [chapter-1](https://github.com/webberig/webpack-express-ultimate-sample/tree/chapter-1) tag.
 
 ## Further reading
 - https://expressjs.com/en/starter/generator.html

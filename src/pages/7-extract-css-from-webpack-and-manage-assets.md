@@ -57,7 +57,7 @@ module.exports = {
 
 This plugin will now generate a `/dist/webpack-assets.json` file during each build.
 
-Take a look at the [commit for this step](https://github.com/webberig/webpack-express-ultimate-guide-sample/commit/b47ed89318efaa40e447c612bccd0b46695d15a8)
+Take a look at the [commit for this step](https://github.com/webberig/webpack-express-ultimate-sample/commit/b47ed89318efaa40e447c612bccd0b46695d15a8)
 
 ### Implement assets in Express app
 
@@ -83,7 +83,7 @@ The middleware will expose a function `webpack_asset` to our template engine, so
 The Javascript will now be loaded no matter how webpack is naming our files, as long as we keep the name of the entry
 "main".
 
-Take a look at the [commit for this step](https://github.com/webberig/webpack-express-ultimate-guide-sample/commit/1fcd85a82326c71636e2c498f0987cfad2f14399)
+Take a look at the [commit for this step](https://github.com/webberig/webpack-express-ultimate-sample/commit/1fcd85a82326c71636e2c498f0987cfad2f14399)
 
 ### Extract CSS during production build
 
@@ -126,7 +126,7 @@ You can now test the build by running following command:
     
 A wild `dist/main.css` appeared!
 
-Take a look at the [commit for this step](https://github.com/webberig/webpack-express-ultimate-guide-sample/commit/1fcd85a82326c71636e2c498f0987cfad2f14399)
+Take a look at the [commit for this step](https://github.com/webberig/webpack-express-ultimate-sample/commit/1fcd85a82326c71636e2c498f0987cfad2f14399)
 
 ### Add optimization
 
