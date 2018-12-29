@@ -20,38 +20,59 @@ optional because using the webpack-dev-server in production is not recommended. 
 the NODE_ENV environment variable.
 
 - `NODE_ENV=production` > Static assets middleware exposing the `/dist` folder
-- `NODE_ENV=development` > Proxy middleware passing request to the webpack-dev-server
+- `NODE_ENV=development` (default) > Proxy middleware passing request to the webpack-dev-server
+
+We'll create a new module (JS file) that will define a `startWds()` method to start the webpack-dev-server and
+`createProxy()` will create a proxy middleware to be included in the Express app. I decided to put those methods in
+ `/src/server/hmr.js`.
 
 So, let's get started!
 
-## Add the dependencies
+### Installing packages
 
 ```
 yarn add -D http-proxy webpack-dev-server
 ```
 
-## Create hmr module
+[commit for this step](https://github.com/webberig/webpack-express-ultimate-guide-sample/commit/e60bc70da6dfe12ccd3dce86785c7f472fcb70ff)
 
-We'll create a new module (JS file) that will define a `start()` method to start the webpack-dev-server and
-`createProxy()` will create a proxy middleware to be included in the Express app.
+### Setting up webpack-dev-server
 
-I decided to put those methods in `/src/server/hmr.js`.
+#### Changes /src/server/hmr.js
 
-### hmr start method
-
-The method looks like this:
 ```
+// /src/server/hmr.js
 const Webpack = require("webpack");
 const WebpackDevServer = require("webpack-dev-server");
 const webpackConfig = require("../../webpack.config.js");
+const config = require("../config");
+const httpProxy = require("http-proxy");
 
-exports.start = () => {
-    webpackConfig.entry = [
-        "webpack/hot/dev-server",
-        "webpack-dev-server/client?http://localhost:3001",
-        ...webpackConfig.entry
-    ];
-    var compiler = Webpack(webpackConfig);
+exports.startWds = () => {
+    if (config.hmrEnabled) {
+        Object.keys(webpackConfig.entry).forEach(name => {
+            webpackConfig.entry[name] = typeof webpackConfig.entry[name] === "string" ?
+                [webpackConfig.entry[name]] : webpackConfig.entry[name];
+
+            webpackConfig.entry[name] = [
+                "webpack/hot/dev-server",
+                `webpack-dev-server/client?http://localhost:${config.wdsPort}`,
+                ...webpackConfig.entry[name]
+            ];
+        });
+    }
+```
+`webpackConfig` contains your webpack configuration (located in `webpack.config.js`. If hmr is enabled, this code will
+ add extra modules to your entrypoints. These modules are the client-side implementation of HMR. They will take care 
+ of pulling changes whenever webpack has re-built and refresh the browser. You'll see a mention of
+  `localhost:${config.wdsPort}` in there. This is the host and port of the webpack-dev-server running (started below),
+   so this must match the `bundler.listen` statement below. We added the port in our config file earlier.
+```
+    const compiler = Webpack(webpackConfig);
+```
+This will create an instance of the webpack compiler. The `webpack-dev-server` relies on this to perform the actual 
+build.
+```
 
     compiler.plugin("compile", function () {
         console.log("Bundling...");
@@ -61,125 +82,123 @@ exports.start = () => {
         console.log("Bundling succeeded");
     });
 
-    var bundler = new WebpackDevServer(compiler, {
-        publicPath: "/assets/",
-        hot: true,
+    const bundler = new WebpackDevServer(compiler, {
+        publicPath: config.publicPath,
+        hot: config.hmrEnabled,
         quiet: false,
         noInfo: true,
         stats: {
             colors: true
         },
     });
-
-    bundler.listen(3001, "localhost", function () {
-        console.log("Bundling project, please wait...");
-    });
-    
-    return bundler;
-};
 ```
-
-I'll explain what all of this does. First:
-```
-    webpackConfig.entry = [
-        "webpack/hot/dev-server",
-        "webpack-dev-server/client?http://localhost:3001",
-        ...webpackConfig.entry
-    ];
-```
-`webpackConfig` contains your webpack configuration (located in `webpack.config.js`. This code will add extra modules
-to your frontend bundle. These modules are the client-side implementation of HMR. They will take care of pulling changes
-whenever webpack has re-built and refresh the browser. You'll see a mention of `localhost:3001` in there. This is the
-host and port of the webpack-dev-server running (started below), so this must match the `bundler.listen` statement 
-below.
-
-    var compiler = Webpack(webpackConfig);
-
-This will create an instance of the webpack compiler. The `webpack-dev-server` relies on this to perform the actual 
-build.
-
-    var bundler = new WebpackDevServer(compiler, {
-        publicPath: "/assets/",
-        hot: true,
-        quiet: false,
-        noInfo: true,
-        stats: {
-            colors: true
-        },
-    });
-
 Create an instance of the webpack-dev-server. We pass the webpack compiler instance and some options. The most
-noteworthy option here is `hot: true`, this will enable HMR! Can you smell the scent of success already ? :-)
+noteworthy option here is `hot: config.hmrEnabled`, this will enable HMR! Can you smell the scent of success
+ already ? :-)
+```
 
-    bundler.listen(3001, "localhost", function () {
+    bundler.listen(config.wdsPort, "localhost", function () {
         console.log("Bundling project, please wait...");
     });
-
-This will start a webserver on a port different than the Express app (which is 3000 by default).
-
-### hmr createProxy method
-
-Add this method in the same file (`/src/server/hmr.js`)
 ```
-const httpProxy = require("http-proxy");
+This will start a webserver on the configured port (3001) which must be different than the Express app
+ (3000 by default).
+```
+};
 
 exports.createProxy = () => {
     const proxy = httpProxy.createProxyServer();
     return (req, res) => proxy.web(req, res, { target: "http://localhost:3001/assets" });
 };
+
 ```
+The `createProxy` method is pretty straightforward, it returns an Express middleware that passes each request to a proxy
+ instance which forwards the requests to the wds (`localhost:3001/assets`).
 
-This method is pretty straightforward, it creates a proxy instance and returns a middleware that applies the proxy to
-all requests if `/assets/*`
+#### Changes to /bin/www
 
-### Starting the webpack-dev-server
+Remember that `/bin/www` is the script being run to start the Express app ? Now it will also start the
+ webpack-dev-server. Add following snippet to `/bin/www`:
 
-Add following snippet to `/bin/www`:
 ```
-if (process.env.NODE_ENV !== "production") {
-    const {start} = require("../src/server/hmr");
-    start();
+const config = require("../src/config");
+
+if (!config.isProd) {
+    const hmr = require("../src/server/hmr");
+    const bundler = hmr.startWds();
 }
 ```
 
-Remember that `/bin/www` is the script being run to start the Express app ? Now it will also start the
- webpack-dev-server.
- 
-### Proxy requests to webpack-dev-server
+### Changes to /webpack.config.js
 
-The last thing we need to do is add the proxy to the Express app.
-
-In your `/src/server/app.js` file, replace the static middleware with following snippet:
+We also need to add a plugin to the webpack config: the
+[HotModuleReplacementPlugin](https://webpack.js.org/plugins/hot-module-replacement-plugin/) which is
+included in the `webpack` core package itself. We'll need to add the plugin dynamically based on
+`config.hmrEnabled`:
 
 ```
-if (process.env.NODE_ENV === "production") {
-  app.use("/assets", express.static(path.join(__dirname, '../../dist')));
+const Webpack = require("webpack");
+
+var webpackConfig = {
+    ...
+    plugins: [
+    ]
+};
+
+if (config.hmrEnabled) {
+    webpackConfig.plugins.push(new Webpack.HotModuleReplacementPlugin());
+}
+module.exports = webpackConfig;
+```
+
+#### Changes to /src/server/app.js
+
+The last piece of the puzzle is the proxy middleware to the Express app. In your `/src/server/app.js` file,
+ replace the static middleware with following snippet:
+
+```
+if (config.isProd) {
+  app.use(config.publicPath, express.static(config.distFolder));
 } else {
   const {createProxy} = require("./hmr");
-  app.use("/assets", createProxy());
+  app.use(config.publicPath, createProxy());
 }
 ```
 
 If not in production, this will apply the middleware we created in the `hmr.js` module.
 
-### Add hmr plugin
+#### And... Done!
+Whoa, that was a big change! Let's recap:
 
-The final piece of the puzzle is the [HotModuleReplacementPlugin](https://webpack.js.org/plugins/hot-module-replacement-plugin/).
- This plugin is included in the `webpack` package, but needs to be added in your `webpack.config.js`:
+1. We created a module that helps up start up the webpack-dev-server
+2. We added that to the startup script (if not production)
+3. We added the hmr plugin in our webpack config (if hmr enabled)
+4. We added a proxy middleware (if not production) in our Express app
 
-```
-var config = {
-    ...
-    plugins: [
-        new Webpack.HotModuleReplacementPlugin(),
-    ]
-};
-```
-
-That's it! run `yarn start` and see if it works. Try to make changes to any of the frontend files, you should see hmr
+Run `yarn start` and see if it works. Try to make changes to any of the frontend files, you should see hmr
 kick in and reload your browser.
 
-All changes of this chapter can be found in [this commit](https://github.com/webberig/webpack-express-ultimate-guide-sample/commit/3eaa9eda6c7dd8011099cffa247ce095e91f5b36)
+[commit for this step](https://github.com/webberig/webpack-express-ultimate-guide-sample/commit/7e84bb73568a61bc492c5ce0b8ce6d34f8641702)
+
+### Add npm scripts
+
+We now have an Express app with 3 different modes
+- `yarn start` Development server with webpack-dev-server and hmr enabled
+- `NODE_ENV=production yarn start` Production server which uses static `/dist` folder to server the assets (Webpack must
+have made a build first)
+- `NO_HMR=1 yarn start` Development server with wds but hmr disabled
+
+We can make that a bit easier by adding scripts to our package.json:
+```
+  "scripts": {
+    "start": "node ./bin/www",
+    "build": "NODE_ENV=production webpack",
+    "start:prod": "NODE_ENV=production node .bin/www",
+    "start:no-hmr": "NO_HMR=1 node .bin/www"
+  },
+```
+
+[commit for this step](https://github.com/webberig/webpack-express-ultimate-guide-sample/commit/8d26fe7f8d8939d45ae12e2f0e71d307b14093f5)
 
 ## Conclusion
 

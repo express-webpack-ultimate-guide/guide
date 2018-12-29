@@ -5,7 +5,7 @@ frontend stack. Secondly we will exploit Webpack's HMR feature to the maximum to
 all goes according to plan, each change will almost instantly be reflected in youw browser without haven to manually
 refresh!
 
-## Installing packages
+### Installing packages
 
 ```
 yarn add -D webpack webpack-cli @babel/core @babel/preset-env babel-loader
@@ -18,7 +18,7 @@ interface. This doesn't do much as long as we don't have a configuration, so let
 
 The Babel packages are explained below.
 
-[commit for this step](https://github.com/webberig/webpack-express-ultimate-guide-sample/commit/1f7e57dc9ca728e09c2bed70703829077137efb5)
+[commit for this step](https://github.com/webberig/webpack-express-ultimate-guide-sample/commit/686629553ab30fc3d618507a8ea97dcd82d05910)
 
 ### Configuring Webpack
 
@@ -33,6 +33,7 @@ module.exports = {
     hmrEnabled: process.env.NODE_ENV !== "production" && !process.env.NO_HMR,
     distFolder: path.resolve(__dirname, "../dist"),
     publicPath: "/assets",
+    wdsPort: 3001,
 };
 ```
 These options will be explained as soon as they're being used. Create a `webpack.config.js` file containing following
@@ -88,7 +89,7 @@ After running the build, you should see that `/dist/main.bundle.js` has appeared
 
 ![Webpack run](/chapter-2/webpack-first-run.png)
 
-[commit for this step](https://github.com/webberig/webpack-express-ultimate-guide-sample/commit/2bdfd4c1c5cc6861b5ebe1213b2190cf612f2cd8)
+[commit for this step](https://github.com/webberig/webpack-express-ultimate-guide-sample/commit/4c84fce01fae98998eb0aa3a430f367634364048)
 
 ### Adding the bundle to your HTML
 
@@ -118,7 +119,7 @@ console in your browser. You should see the loving message appearing from our bu
 
 ![Browser with console output from bundle](/chapter-2/browser-with-bundle.png)
 
-[commit for this step](https://github.com/webberig/webpack-express-ultimate-guide-sample/commit/31a755532c2f72102be6bc309633a5c8dcddd174)
+[commit for this step](https://github.com/webberig/webpack-express-ultimate-guide-sample/commit/6ac5e7b217bae8677555c9033ccaa5383b68c375)
 
 ### Adding Babel
 
@@ -163,7 +164,7 @@ matching files.
 
 You can test the setup by adding some ES6/7/2015 syntax in your `/src/client/main.js` and run webpack.
 
-[commit for this step](https://github.com/webberig/webpack-express-ultimate-guide-sample/commit/4d1a7fa03e450aeff169b30e21f8acbca7eefff0)
+[commit for this step](https://github.com/webberig/webpack-express-ultimate-guide-sample/commit/24892c48874ceb6b3af79f17b29c03589e3927fc)
 
 ## Tip & Tricks
 

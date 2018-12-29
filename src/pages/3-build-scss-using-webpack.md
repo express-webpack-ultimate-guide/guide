@@ -18,7 +18,7 @@ This tool will add vendor prefixes required to support older browsers.
 The sample project uses SCSS, but you can pretty much do the same with any other preprocessor if you replace the 
 `sass-loader` with the appropriate loader.
 
-## Add dependencies
+### Installing packages
 
 To have your SCSS properly processed in Webpack, you'll need 4 different loaders. This is because Webpack recommends
 a single responsibility principle for a loader, and there are actually 4 steps involved this time:
@@ -37,7 +37,7 @@ yarn add -D sass-loader node-sass css-loader postcss-loader postcss-preset-env s
 You will notice I also added `postcss-preset-env` and `node-sass`. This is because `sass-loader` requires you to add
 `node-sass` as a dependency yourself, and `postcss-preset-env` helps us configuring postcss more easily.
 
-[commit for this step](https://github.com/webberig/webpack-express-ultimate-guide-sample/commit/60dc52f7bfe0f3f1b4b039ad88f6946c8dd46817)
+[commit for this step](https://github.com/webberig/webpack-express-ultimate-guide-sample/commit/593588627dbc11ed67c369e854987162d283b09c)
 
 ### Configure webpack
 
@@ -59,6 +59,8 @@ Just add a new rule to your `webpack.config.js` to use those loaders.
         ]
     }
 ```
+
+[commit for this step](https://github.com/webberig/webpack-express-ultimate-guide-sample/commit/9f08f8262a5f37bf09416f67ce74b58cf2f8c9b8)
 
 ### Create your first SCSS file
 
@@ -88,7 +90,7 @@ module.exports = () => {
 };
 ```
 
-[commit for these steps](https://github.com/webberig/webpack-express-ultimate-guide-sample/commit/16fd2e18f61713bb3ee6f57b743b1d8f0dc1a405)
+[commit for these steps](https://github.com/webberig/webpack-express-ultimate-guide-sample/commit/1a6c2763de9c70d31d91c62db67b3d908663a4fc)
 
 ## Conclusion
 
