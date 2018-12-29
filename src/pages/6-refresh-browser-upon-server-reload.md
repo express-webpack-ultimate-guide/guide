@@ -32,7 +32,7 @@ chokidar.watch(path.join(__dirname, "../src/server")).on('all', (event, at) => {
 
 We use the `restart` promise so we trigger the refresh AFTER we made sure the server is up and running!
 
-Take a look at the [commit for this step](https://github.com/webberig/webpack-express-ultimate-sample/commit/b5f17728e271c553195f0bf339e29a02f651581c)
+[commit for this step](https://github.com/webberig/webpack-express-ultimate-sample/commit/ec25242d75bc5da6ef157a30579b57ce77f925a6)
 
 ## Conclusion
 
@@ -44,17 +44,17 @@ run the server (`yarn dev`), you can now do all the things I promised in the pre
 be clear:
 
 ###### 1. Build (client-side) JS
-- Client-side Javascript should be transpiled with **Babel**
-- **Webpack** should be configured to make a JS bundle
+- Client-side Javascript should be transpiled with **Babel** ✅
+- **Webpack** should be configured to make a JS bundle ✅
 
 ###### 2. Build CSS
-- Compile **SASS/SCSS**
-- Pass through PostCSS, mainly to apply the **Autoprefixer** plugin
+- Compile **SASS/SCSS** ✅
+- Pass through PostCSS, mainly to apply the **Autoprefixer** plugin ✅
 
 ###### 3. Hot module replacement
-- Instantly apply CSS changes without reloading the browser
-- Refresh the page upon JS changes
-- Refresh the page upon changes in the Express app
+- Instantly apply CSS changes without reloading the browser ✅
+- Refresh the page upon JS changes ✅
+- Refresh the page upon changes in the Express app ✅
 
 After you finish your glass of Cava (or whatever it is you do to celebrate victoriously), continue to the last chapter
  to complete the production-build!
