@@ -198,7 +198,7 @@ We can make that a bit easier by adding scripts to our package.json:
   },
 ```
 
-[commit for this step](https://github.com/webberig/webpack-express-ultimate-sample/commit/8d26fe7f8d8939d45ae12e2f0e71d307b14093f5)
+[commit for this step](https://github.com/webberig/webpack-express-ultimate-sample/commit/97558406d198a75d4d198bdfbffb8d4ac2df3887)
 
 ## Conclusion
 
