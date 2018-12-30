@@ -1,0 +1,8 @@
+footer {
+  padding: 15px;
+  font-size: 80%;
+  background-color: #f8f8f8;
+  .column + .column {
+    text-align: right;
+  }
+}

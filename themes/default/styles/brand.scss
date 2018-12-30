@@ -1,0 +1,29 @@
+.brand {
+  font-family: 'Roboto', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  display: inline-block;
+  text-transform: uppercase;
+  line-height: 1;
+  font-size: 26px;
+  letter-spacing: normal;
+  small {
+    text-transform: none;
+    font-size: 60%;
+    display: block;
+    letter-spacing: 0.45em;
+  }
+  @media screen and (min-width: 600px) {
+    small {
+      padding-left: 0.6em;
+    }
+  }
+  .hero-unit & {
+    font-size: 2vw;
+    margin-bottom: 50px;
+    small {
+      padding-left: 0.6em;
+    }
+    @media screen and (min-width: 600px) {
+      font-size: 50px;
+    }
+  }
+}

@@ -1,0 +1,41 @@
+@import "./palette";
+
+.hero-unit {
+  text-align: center;
+  padding: 50px 0;
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: $primary-color-dark;
+  color: $primary-color-text;
+  margin-bottom: 50px;
+
+  & > div {
+    flex: 0;
+  }
+  &_cta {
+    background-color: white;
+    color: $primary-text-color;
+    padding: 8px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    border: none;
+    box-shadow: 0 5px rgba(0,0,0, 0.2);
+    transition: all 0.2s ease;
+    display: inline-block;
+
+    &:hover, &:focus {
+      color: $primary-text-color;
+      background-color: transparentize(white, .1);
+    }
+
+    &:active {
+      color: $primary-text-color;
+      background-color: transparentize(white, .15);
+      box-shadow: 0 1px rgba(0,0,0, 0.2);
+      transform: translateY(4px);
+    }
+
+  }
+}
