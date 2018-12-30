@@ -1,5 +1,13 @@
 doctype html
 head
+    script(async, src="https://www.googletagmanager.com/gtag/js?id=UA-131520232-1")
+    script.
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'UA-131520232-1');
     title Express|Webpack - The ultimate guide
     link(rel="shortcut icon" href="/favicon.png")
     link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Crimson+Text|Roboto")

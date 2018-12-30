@@ -25,10 +25,12 @@ function ready(fn) {
 ready(function() {
     var btnMenu = document.querySelector("button.hamburger");
     var mainMenu = document.querySelector("nav.main-menu");
-    btnMenu
-        .addEventListener("click", function() {
-            toggleClass(mainMenu, "__visible");
-            toggleClass(btnMenu, "is-active");
-            toggleClass(document.body, "__menu-visible");
-        });
+    if (btnMenu) {
+        btnMenu
+            .addEventListener("click", function() {
+                toggleClass(mainMenu, "__visible");
+                toggleClass(btnMenu, "is-active");
+                toggleClass(document.body, "__menu-visible");
+            });
+    }
 });
