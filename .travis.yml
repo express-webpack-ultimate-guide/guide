@@ -16,3 +16,4 @@ install:
 
 script:
   - yarn build
+  - gh-pages -d public -b master -r https://${GITHUB_TOKEN}@github.com/express-webpack-ultimate-guide/express-webpack-ultimate-guide.github.io.git
