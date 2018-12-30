@@ -41,7 +41,7 @@ yarn add -D chokidar
 ```
 Chokidar is a library wrapping NodeJS's native fs.watch API. Nodemon also uses this library.
 
-[commit for this step](https://github.com/webberig/webpack-express-ultimate-sample/commit/fd7e9af3c9b06dfcc2261aac38ddf8d80662dfed)
+[commit for this step](https://github.com/express-webpack-ultimate-guide/sample/commit/fd7e9af3c9b06dfcc2261aac38ddf8d80662dfed)
 
 ### Wrap the Express app in a function
 If we create a new server instance upon restart, we want a new instance of the Express app as well. To avoid the
@@ -70,7 +70,7 @@ We must adapt our startup script to work with this change, so in your `/bin/www`
 ```
 (Notice the trailing brackets)
 
-[commit for this step](https://github.com/webberig/webpack-express-ultimate-sample/commit/ffdb66b549c5cf33aa658c83dd2e2997de30d5e1)
+[commit for this step](https://github.com/express-webpack-ultimate-guide/sample/commit/ffdb66b549c5cf33aa658c83dd2e2997de30d5e1)
 
 ### Implement file watch and server restart
 
@@ -205,7 +205,7 @@ Start watching the server files and call `restart()` when a file changed.
 }
 ```
 
-[commit for this step](https://github.com/webberig/webpack-express-ultimate-sample/commit/8d1a08f5465f204440c6fdb499aafb9cd06b3f2d)
+[commit for this step](https://github.com/express-webpack-ultimate-guide/sample/commit/8d1a08f5465f204440c6fdb499aafb9cd06b3f2d)
 
 ## Conclusion
 
@@ -214,7 +214,7 @@ you make a change to the server (routes, views, ...) it should automatically rel
 still need to refresh your browser manually. We'll put the icing on the cake in the next chapter!
 
 After completing this chapter, your app should look like the sample app in the
-[chapter-5](https://github.com/webberig/webpack-express-ultimate-sample/tree/chapter-5) tag.
+[chapter-5](https://github.com/express-webpack-ultimate-guide/sample/tree/chapter-5) tag.
 
 [Continue to chapter 6 - Refresh browser upon server reload](/6-refresh-browser-upon-server-reload)
 

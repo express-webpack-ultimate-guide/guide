@@ -26,3 +26,16 @@ a {
 h1, h2 {
     font-family: 'Crimson Text', serif;
 }
+
+.toc {
+    ul {
+        list-style: none;
+        margin-bottom: 10px;
+    }
+    h4 {
+        margin-bottom: 10px;
+    }
+    li {
+        margin: 0;
+    }
+}

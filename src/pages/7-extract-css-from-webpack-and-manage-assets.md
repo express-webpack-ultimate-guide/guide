@@ -43,7 +43,7 @@ yarn add express-webpack-assets
 - `optimize-css-assets-webpack-plugin` minimizes the CSS (using cssnano)
 - `uglifyjs-webpack-plugin` minimizes JS
 
-[commit for this step](https://github.com/webberig/webpack-express-ultimate-sample/commit/e7498b7313058bff8658c4b744ce11adc2c34ad4)
+[commit for this step](https://github.com/express-webpack-ultimate-guide/sample/commit/e7498b7313058bff8658c4b744ce11adc2c34ad4)
 
 ### Configure manifest in Webpack
 
@@ -61,7 +61,7 @@ module.exports = {
 
 This plugin will now generate a `/dist/webpack-assets.json` file during each build.
 
-[commit for this step](https://github.com/webberig/webpack-express-ultimate-sample/commit/1025a8bb13ec52327349319f13841aa418f6b8fe)
+[commit for this step](https://github.com/express-webpack-ultimate-guide/sample/commit/1025a8bb13ec52327349319f13841aa418f6b8fe)
 
 ### Implement assets in Express app
 
@@ -87,7 +87,7 @@ The middleware will expose a function `webpack_asset` to our template engine, so
 The Javascript will now be loaded no matter how webpack is naming our files, as long as we keep the name of the entry
 "main".
 
-[commit for this step](https://github.com/webberig/webpack-express-ultimate-sample/commit/1b6bf255a0188c862bd47946eb2d5286c8710d66)
+[commit for this step](https://github.com/express-webpack-ultimate-guide/sample/commit/1b6bf255a0188c862bd47946eb2d5286c8710d66)
 
 ### Extract CSS during production build
 
@@ -137,7 +137,7 @@ Finally we can add the CSS file to our `layout.twig`:
 ```
 We add this conditionally because the CSS asset will not be present during development!
 
-[commit for this step](https://github.com/webberig/webpack-express-ultimate-sample/commit/2a5e1b7867db66c4af90a64814245842eae27d57)
+[commit for this step](https://github.com/express-webpack-ultimate-guide/sample/commit/2a5e1b7867db66c4af90a64814245842eae27d57)
 
 ### Add optimization
 
@@ -160,7 +160,7 @@ module.exports = {
 Even though Webpack 4 has UglifyJs built-in and enabled by default, we need to add it anyway because we're overriding
  the `optimization.minimizer` default configuration.
 
-[commit for this step](https://github.com/webberig/webpack-express-ultimate-sample/commit/697db3d6c473dde6be221794360e660533d58f7e)
+[commit for this step](https://github.com/express-webpack-ultimate-guide/sample/commit/697db3d6c473dde6be221794360e660533d58f7e)
 
 ### Add hashes to asset filenames
 
@@ -184,16 +184,14 @@ module.exports = {
 
 Since we already implemented the manifest, we don't need to do anything in our Express app.
 
-## Conclusion
+[commit for this step](https://github.com/express-webpack-ultimate-guide/sample/commit/954c36d2a86382ba514983db3d17d290239761b7)
 
-[commit for this step](https://github.com/webberig/webpack-express-ultimate-sample/commit/954c36d2a86382ba514983db3d17d290239761b7)
+## Conclusion
 
 We now have a complete setup for both development and production. To summarize, these commands are now available to you:
 
-`yarn start` Start Express app and wds, watch for changes and refresh your browser to apply them.
-
-`yarn build` Create your frontend bundle. Files are saved to the `dist/` folder.
-
-`yarn start:prod` Run Express in production-mode, just serving the files from the `dist/` folder. Webpack is not
+- `yarn start` Start Express app and wds, watch for changes and refresh your browser to apply them.
+- `yarn build` Create your frontend bundle. Files are saved to the `dist/` folder.
+- `yarn start:prod` Run Express in production-mode, just serving the files from the `dist/` folder. Webpack is not
  running.
  

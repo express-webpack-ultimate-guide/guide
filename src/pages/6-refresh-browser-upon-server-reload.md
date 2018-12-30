@@ -32,12 +32,12 @@ chokidar.watch(path.join(__dirname, "../src/server")).on('all', (event, at) => {
 
 We use the `restart` promise so we trigger the refresh AFTER we made sure the server is up and running!
 
-[commit for this step](https://github.com/webberig/webpack-express-ultimate-sample/commit/ec25242d75bc5da6ef157a30579b57ce77f925a6)
+[commit for this step](https://github.com/express-webpack-ultimate-guide/sample/commit/ec25242d75bc5da6ef157a30579b57ce77f925a6)
 
 ## Conclusion
 
 After completing this chapter, your app should look like the sample app in the
- [chapter-6](https://github.com/webberig/webpack-express-ultimate-sample/tree/chapter-6) tag.
+ [chapter-6](https://github.com/express-webpack-ultimate-guide/sample/tree/chapter-6) tag.
 
 This was the final step of getting ExpressJS and Webpack to join forces for the ultimate developer experience. When you
 run the server (`yarn dev`), you can now do all the things I promised in the preface. Let me just copy/paste that to

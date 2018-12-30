@@ -34,7 +34,7 @@ So, let's get started!
 yarn add -D http-proxy webpack-dev-server
 ```
 
-[commit for this step](https://github.com/webberig/webpack-express-ultimate-sample/commit/e60bc70da6dfe12ccd3dce86785c7f472fcb70ff)
+[commit for this step](https://github.com/express-webpack-ultimate-guide/sample/commit/e60bc70da6dfe12ccd3dce86785c7f472fcb70ff)
 
 ### Setting up webpack-dev-server
 
@@ -178,7 +178,7 @@ Whoa, that was a big change! Let's recap:
 Run `yarn start` and see if it works. Try to make changes to any of the frontend files, you should see hmr
 kick in and reload your browser.
 
-[commit for this step](https://github.com/webberig/webpack-express-ultimate-sample/commit/7e84bb73568a61bc492c5ce0b8ce6d34f8641702)
+[commit for this step](https://github.com/express-webpack-ultimate-guide/sample/commit/7e84bb73568a61bc492c5ce0b8ce6d34f8641702)
 
 ### Add npm scripts
 
@@ -198,7 +198,7 @@ We can make that a bit easier by adding scripts to our package.json:
   },
 ```
 
-[commit for this step](https://github.com/webberig/webpack-express-ultimate-sample/commit/97558406d198a75d4d198bdfbffb8d4ac2df3887)
+[commit for this step](https://github.com/express-webpack-ultimate-guide/sample/commit/97558406d198a75d4d198bdfbffb8d4ac2df3887)
 
 ## Conclusion
 
@@ -209,6 +209,6 @@ Keep in mind that we're building towards a system that has 2 different modes: de
 prepared a few things to make that distinction, our production build is not yet ready. We'll finish that in chapter 7.
 
 After completing this chapter, your app should look like the sample app in the
- [chapter-4](https://github.com/webberig/webpack-express-ultimate-sample/tree/chapter-4) tag.
+ [chapter-4](https://github.com/express-webpack-ultimate-guide/sample/tree/chapter-4) tag.
 
 [Continue to chapter 5 - Reload server upon changes (the smart way)](/5-reload-server-upon-changes)

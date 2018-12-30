@@ -35,7 +35,7 @@ This is what defines the holy grail (at least, for me personally):
 
 This book will often refer to a sample project on Github with clean commits and tags for each chapter.
 
-https://github.com/webberig/webpack-express-ultimate-sample
+https://github.com/express-webpack-ultimate-guide/sample
 
 Each of those commits will be explained in detail in each of the corresponding chapter.
 
