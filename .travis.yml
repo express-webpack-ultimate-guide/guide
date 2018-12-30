@@ -11,16 +11,8 @@ cache:
     - node_modules
 
 install:
-  - npm install -g yarn
+  - npm install -g yarn gh-pages
   - yarn install
 
 script:
   - yarn build
-deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN
-  fqdn: express-webpack-ultimate-guide.testlocatie.be
-  local_dir: public
-  on:
-    branch: master
