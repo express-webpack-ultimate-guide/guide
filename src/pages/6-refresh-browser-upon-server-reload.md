@@ -59,4 +59,5 @@ be clear:
 After you finish your glass of Cava (or whatever it is you do to celebrate victoriously), continue to the last chapter
  to complete the production-build!
 
-[Continue to chapter 7 - Extract CSS from webpack and manage assets](/7-extract-css-from-webpack-and-manage-assets)
+----
+[» Continue to chapter 7 - Extract CSS from webpack and manage assets](/7-extract-css-from-webpack-and-manage-assets)

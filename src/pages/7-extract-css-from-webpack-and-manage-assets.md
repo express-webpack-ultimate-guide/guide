@@ -195,3 +195,6 @@ We now have a complete setup for both development and production. To summarize, 
 - `yarn start:prod` Run Express in production-mode, just serving the files from the `dist/` folder. Webpack is not
  running.
  
+----
+[» Closing words](/closing)
+ 

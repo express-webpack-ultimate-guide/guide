@@ -216,9 +216,11 @@ still need to refresh your browser manually. We'll put the icing on the cake in 
 After completing this chapter, your app should look like the sample app in the
 [chapter-5](https://github.com/express-webpack-ultimate-guide/sample/tree/chapter-5) tag.
 
-[Continue to chapter 6 - Refresh browser upon server reload](/6-refresh-browser-upon-server-reload)
 
 ## Further reading
 - [Medium article on nodeJS require cache](https://medium.com/@gattermeier/invalidate-node-js-require-cache-c2989af8f8b0)
 - [Akshendra's blog post on reloading an Express server](https://blog.cloudboost.io/reloading-the-express-server-without-nodemon-e7fa69294a96)
 - [Kevin's blog post on replacing Nodemon with a better alternative](https://codeburst.io/dont-use-nodemon-there-are-better-ways-fc016b50b45e)
+
+----
+[» Continue to chapter 6 - Refresh browser upon server reload](/6-refresh-browser-upon-server-reload)

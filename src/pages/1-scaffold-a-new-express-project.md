@@ -74,4 +74,5 @@ After completing this chapter, your app should look like the sample app in the
 - https://expressjs.com/en/starter/generator.html
 - https://www.gitignore.io/
 
-[Continue to chapter 2 - Setup Webpack for JS build with babel](/2-setup-webpack-build-with-babel)
+----
+[» Continue to chapter 2 - Setup Webpack for JS build with babel](/2-setup-webpack-build-with-babel)

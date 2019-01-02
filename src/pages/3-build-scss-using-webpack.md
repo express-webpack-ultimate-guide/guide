@@ -103,4 +103,10 @@ the bundle during production build.
 After completing this chapter, your app should look like the sample app in the
  [chapter-3](https://github.com/express-webpack-ultimate-guide/sample/tree/chapter-3) tag.
 
-[Continue to chapter 4 - Setting up webpack-dev-server](/4-setting-up-webpack-dev-server)
+
+## Further reading
+- https://sass-lang.com/
+- https://postcss.org/
+
+----
+[» Continue to chapter 4 - Setting up webpack-dev-server](/4-setting-up-webpack-dev-server)

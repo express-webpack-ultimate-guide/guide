@@ -184,10 +184,12 @@ upon start, trigger re-build automatically upon changes and signal the browser s
 After completing this chapter, your app should look like the sample app in the
  [chapter-2](https://github.com/express-webpack-ultimate-guide/sample/tree/chapter-2) tag.
 
-[Continue to chapter 3 - Build SCSS using Webpack](/3-build-scss-using-webpack)
-
 ## Further reading
-- https://webpack.js.org/api/cli/
+- https://webpack.js.org/api/cli/ 
 - https://webpack.js.org/loaders/
+- https://github.com/webpack-contrib/awesome-webpack
 - https://babeljs.io/
 - https://babeljs.io/docs/en/babel-preset-env
+
+----
+[» Continue to chapter 3 - Build SCSS using Webpack](/3-build-scss-using-webpack)

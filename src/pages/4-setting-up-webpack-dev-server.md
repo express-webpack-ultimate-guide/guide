@@ -211,4 +211,9 @@ prepared a few things to make that distinction, our production build is not yet 
 After completing this chapter, your app should look like the sample app in the
  [chapter-4](https://github.com/express-webpack-ultimate-guide/sample/tree/chapter-4) tag.
 
-[Continue to chapter 5 - Reload server upon changes (the smart way)](/5-reload-server-upon-changes)
+## Further reading
+- https://webpack.js.org/configuration/dev-server/#devserver
+- https://webpack.js.org/concepts/hot-module-replacement/
+
+----
+[» Continue to chapter 5 - Reload server upon changes (the smart way)](/5-reload-server-upon-changes)
