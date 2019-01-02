@@ -13,3 +13,5 @@ That being said, I created a fork of the sample code that you can use as a boile
 sample code to maintain a proper reference to this book, but the boilerplate will remain updated and will be expanded
  with more features such as linting and testing.
 
+https://github.com/express-webpack-ultimate-guide/starter
+
