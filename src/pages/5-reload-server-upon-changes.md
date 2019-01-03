@@ -41,7 +41,7 @@ yarn add -D chokidar
 ```
 Chokidar is a library wrapping NodeJS's native fs.watch API. Nodemon also uses this library.
 
-[commit for this step](https://github.com/express-webpack-ultimate-guide/sample/commit/fd7e9af3c9b06dfcc2261aac38ddf8d80662dfed)
+[commit for this step](https://github.com/express-webpack-ultimate-guide/sample/commit/db232ca8c451c4c8b72ea9b4c62b17b94ab2db4e)
 
 ### Wrap the Express app in a function
 If we create a new server instance upon restart, we want a new instance of the Express app as well. To avoid the
@@ -70,7 +70,7 @@ We must adapt our startup script to work with this change, so in your `/bin/www`
 ```
 (Notice the trailing brackets)
 
-[commit for this step](https://github.com/express-webpack-ultimate-guide/sample/commit/ffdb66b549c5cf33aa658c83dd2e2997de30d5e1)
+[commit for this step](https://github.com/express-webpack-ultimate-guide/sample/commit/3214a047492d9be46e3ed296c20d2638a4611b90)
 
 ### Implement file watch and server restart
 
@@ -205,7 +205,7 @@ Start watching the server files and call `restart()` when a file changed.
 }
 ```
 
-[commit for this step](https://github.com/express-webpack-ultimate-guide/sample/commit/8d1a08f5465f204440c6fdb499aafb9cd06b3f2d)
+[commit for this step](https://github.com/express-webpack-ultimate-guide/sample/commit/2453ed5b8dfa5ee88993adac41239f10bc80a8e0)
 
 ## Conclusion
 

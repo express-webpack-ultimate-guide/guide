@@ -43,7 +43,7 @@ yarn add express-webpack-assets
 - `optimize-css-assets-webpack-plugin` minimizes the CSS (using cssnano)
 - `uglifyjs-webpack-plugin` minimizes JS
 
-[commit for this step](https://github.com/express-webpack-ultimate-guide/sample/commit/e7498b7313058bff8658c4b744ce11adc2c34ad4)
+[commit for this step](https://github.com/express-webpack-ultimate-guide/sample/commit/389ff8a41b3ded2d3b8b6d2549c65b7a60f9161e)
 
 ### Configure manifest in Webpack
 
@@ -61,7 +61,7 @@ module.exports = {
 
 This plugin will now generate a `/dist/webpack-assets.json` file during each build.
 
-[commit for this step](https://github.com/express-webpack-ultimate-guide/sample/commit/1025a8bb13ec52327349319f13841aa418f6b8fe)
+[commit for this step](https://github.com/express-webpack-ultimate-guide/sample/commit/d90e8ea9689fa614293a28d67f3fea2d40d92df4)
 
 ### Implement assets in Express app
 
@@ -87,7 +87,7 @@ The middleware will expose a function `webpack_asset` to our template engine, so
 The Javascript will now be loaded no matter how webpack is naming our files, as long as we keep the name of the entry
 "main".
 
-[commit for this step](https://github.com/express-webpack-ultimate-guide/sample/commit/1b6bf255a0188c862bd47946eb2d5286c8710d66)
+[commit for this step](https://github.com/express-webpack-ultimate-guide/sample/commit/71a47217c7317aefb787eaa4de0d0b2c42d86f87)
 
 ### Extract CSS during production build
 
@@ -137,7 +137,7 @@ Finally we can add the CSS file to our `layout.twig`:
 ```
 We add this conditionally because the CSS asset will not be present during development!
 
-[commit for this step](https://github.com/express-webpack-ultimate-guide/sample/commit/2a5e1b7867db66c4af90a64814245842eae27d57)
+[commit for this step](https://github.com/express-webpack-ultimate-guide/sample/commit/8185e6f455e2403ff0d996f6c7afbc5df1bc4e3a)
 
 ### Add optimization
 
@@ -160,7 +160,7 @@ module.exports = {
 Even though Webpack 4 has UglifyJs built-in and enabled by default, we need to add it anyway because we're overriding
  the `optimization.minimizer` default configuration.
 
-[commit for this step](https://github.com/express-webpack-ultimate-guide/sample/commit/697db3d6c473dde6be221794360e660533d58f7e)
+[commit for this step](https://github.com/express-webpack-ultimate-guide/sample/commit/734e9aee62e0c57452bed7cbf073365e79cabbc7)
 
 ### Add hashes to asset filenames
 
@@ -184,7 +184,7 @@ module.exports = {
 
 Since we already implemented the manifest, we don't need to do anything in our Express app.
 
-[commit for this step](https://github.com/express-webpack-ultimate-guide/sample/commit/954c36d2a86382ba514983db3d17d290239761b7)
+[commit for this step](https://github.com/express-webpack-ultimate-guide/sample/commit/ed284c58852c5d41eb12073b9ea7a9663bba2c24)
 
 ## Conclusion
 

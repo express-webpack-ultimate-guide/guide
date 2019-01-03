@@ -32,7 +32,7 @@ chokidar.watch(path.join(__dirname, "../src/server")).on('all', (event, at) => {
 
 We use the `restart` promise so we trigger the refresh AFTER we made sure the server is up and running!
 
-[commit for this step](https://github.com/express-webpack-ultimate-guide/sample/commit/ec25242d75bc5da6ef157a30579b57ce77f925a6)
+[commit for this step](https://github.com/express-webpack-ultimate-guide/sample/commit/8067b3f62bd6109401215b2c0c4601cfcafda0d6)
 
 ## Conclusion
 

@@ -100,6 +100,7 @@ noteworthy option here is `hot: config.hmrEnabled`, this will enable HMR! Can yo
     bundler.listen(config.wdsPort, "localhost", function () {
         console.log("Bundling project, please wait...");
     });
+    return bundler;
 ```
 This will start a webserver on the configured port (3001) which must be different than the Express app
  (3000 by default).
@@ -178,7 +179,7 @@ Whoa, that was a big change! Let's recap:
 Run `yarn start` and see if it works. Try to make changes to any of the frontend files, you should see hmr
 kick in and reload your browser.
 
-[commit for this step](https://github.com/express-webpack-ultimate-guide/sample/commit/7e84bb73568a61bc492c5ce0b8ce6d34f8641702)
+[commit for this step](https://github.com/express-webpack-ultimate-guide/sample/commit/d52f155bc34ba928cc1b6c9dca68e1d29f5ae7c1)
 
 ### Add npm scripts
 
@@ -198,7 +199,7 @@ We can make that a bit easier by adding scripts to our package.json:
   },
 ```
 
-[commit for this step](https://github.com/express-webpack-ultimate-guide/sample/commit/97558406d198a75d4d198bdfbffb8d4ac2df3887)
+[commit for this step](https://github.com/express-webpack-ultimate-guide/sample/commit/456ff0db507b846b856a54824d4dfe6b84c1e86b)
 
 ## Conclusion
 
